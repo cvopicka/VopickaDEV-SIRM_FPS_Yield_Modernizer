@@ -1,0 +1,33 @@
+# SQL Statements for VopickaDEV-sirm_fps_yield_modernizer
+
+[SQL]
+
+[SQL.Create]
+Admin_Meta = """\
+    CREATE TABLE Admin_Meta (
+        Std_ID LONG NOT NULL PRIMARY KEY,
+        Is_Yield BIT,
+        HarvestYr SHORT,
+        HarvestRegime VARCHAR(255)
+    );\
+    """
+YIELD = "CREATE VIEW"
+YLDENS = "CREATE VIEW"
+YLDSPP = "CREATE VIEW"
+YLDSRT = "CREATE VIEW"
+
+[SQL.Convert]
+YIELD_AdminMeta = "SELECT BASIS, REGION, HAB_GRP, SITE_CLS, REGIME, ORIGIN FROM YIELD WHERE RPT_YR = 0;"
+INSERT_AdminMeta = "INSERT INTO Admin_Meta (Std_ID, Is_Yield, HarvestRegime) VALUES (?, ?, ?);"
+YIELD_ADMIN = "SELECT"
+INSERT_ADMIN = "?"
+YIELD_CRUISE = "SELECT"
+INSERT_CRUISE = "?"
+YLDSPP_PLOTS = "SELECT"
+INSERT_PLOTS = "?"
+
+[SQL.Drop]
+YIELD = "DROP TABLE YIELD;"
+YLDENS = "DROP TABLE YLDENS;"
+YLDSPP = "DROP TABLE YLDSPP;"
+YLDSRT = "DROP TABLE YLDSRT;"
