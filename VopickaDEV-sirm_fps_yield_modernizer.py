@@ -55,9 +55,9 @@ try:
 
         asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
-    trying = "spf.Config"
+    trying = "sirm_spf_libs"
     __dependencies__.append(trying)
-    from spf.Config import database_dsn
+    from sirm_spf_libs.Config import database_dsn
 
     trying = "toml"
     __dependencies__.append(trying)
